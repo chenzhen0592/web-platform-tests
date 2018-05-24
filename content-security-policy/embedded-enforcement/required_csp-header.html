@@ -53,6 +53,18 @@
       { "name": "Wrong value of `csp` should not trigger sending Sec-Required-CSP Header - report-to present",
         "csp": "script-src 'unsafe-inline'; report-to resources/dummy-report.php",
         "expected": null },
+      { "name": "Wrong value of `csp` should not trigger sending Sec-Required-CSP Header - \\r\\n character after directive name",
+        "csp": "script-src\r\n'unsafe-inline'",
+        "expected": null },
+      { "name": "Wrong value of `csp` should not trigger sending Sec-Required-CSP Header - \\r\\n character in directive value",
+        "csp": "script-src 'unsafe-inline'\r\n'unsafe-eval'",
+        "expected": null },
+      { "name": "Wrong value of `csp` should not trigger sending Sec-Required-CSP Header - \\n character after directive name",
+        "csp": "script-src\n'unsafe-inline'",
+        "expected": null },
+      { "name": "Wrong value of `csp` should not trigger sending Sec-Required-CSP Header - \\n character in directive value",
+        "csp": "script-src 'unsafe-inline'\n'unsafe-eval'",
+        "expected": null },
     ];
 
     tests.forEach(test => {
