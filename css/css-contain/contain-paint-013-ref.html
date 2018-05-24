@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>CSS Containment Test: Reference file</title>
+<link rel="author" title="Manuel Rego Casasnovas" href="mailto:rego@igalia.com">
+<style>
+.wrapper {
+  border: solid thick;
+  margin: 1em;
+}
+</style>
+<p>Test passes if margins do not collapse on the first two boxes, but they collapse on the last one.</p>
+<div class="wrapper">
+  <div style="margin: 2em 0;">This text should have 2em top and bottom margins (margins do not collapse).</div>
+</div>
+<div class="wrapper">
+  <div style="margin: 2em 0;">This text should have 2em top and bottom margins (margins do not collapse).</div>
+</div>
+<div class="wrapper">
+  <div style="margin: 1em 0;">This text should have 1em top and bottom margins (margins collapse).</div>
+</div>
